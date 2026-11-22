@@ -1,0 +1,26 @@
+
+// Select input, button and result
+const userInput = document.getElementById("userInput");
+const checkBtn = document.getElementById("checkBtn");
+const result = document.getElementById("result");
+
+// Create function
+function checkInput() {
+    const value = userInput.value.trim();
+
+    if (value === "") {
+        result.textContent = "Please enter a valid number!";
+    } else if (isNaN(Number(value))) {
+        result.textContent = "Please enter a valid number!";
+    } else if (Number(value) < 10) {
+        result.textContent = "The number is lower than 10";
+    } else if (Number(value) > 10) {
+        result.textContent = "The number is higher than 10";
+    } else {
+        result.textContent = "The number is equal to 10";
+    }
+}
+
+// Add click event listener
+checkBtn.addEventListener("click", checkInput);
+
